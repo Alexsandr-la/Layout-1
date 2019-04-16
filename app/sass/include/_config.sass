@@ -1,0 +1,57 @@
+@charset "UTF-8"
+
+//
+$font: 'Open Sans', sans-serif
+
+
+// цвет шрифтов
+$white: #ffffff
+$black: #000000
+$title: #232020
+
+//цвет кнопок
+$btn: #f17398
+$btn_bottom: #db577e
+
+//цвет фона
+$bg-form: #f8f8f8
+$bg: #232020
+
+// Основные разрешения
+// ===================
+$max-width: 1002px
+
+$desktop: 1330px
+$tablet: 991px
+$mobail: 767px
+$sm-mobail: 575px
+
+$min-width: 320px
+
+=max-width($width)
+	@media only screen and (max-width: $width)
+		@content
+
+=max-width-height($width)
+	@media only screen and (max-width: $width) and (max-height: 600px)
+		@content
+
+
+=full-wrap()
+	margin: 0 auto
+	position: relative
+	max-width: $max-width
+	min-width: $min-width
+	padding: 0 10px
+
+
+=font($size: false, $colour: false ,$weight: false,  $lh: false)
+	font-family: $font
+	@if $size
+		font-size: $size
+	@if $colour
+		color: $colour
+	@if $weight
+		font-weight: $weight
+	@if $lh
+		line-height: $lh

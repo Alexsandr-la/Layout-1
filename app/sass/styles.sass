@@ -1,0 +1,867 @@
+@charset "UTF-8"
+
+@import 'include/_reset'
+@import 'include/_font'
+@import 'include/_config'
+@import 'include/_button'
+
+body
+	font: 400 15.6px/130% $font
+	max-width: 1400px
+	margin: 0 auto
+	overflow-x: hidden
+
+
+.full-wrap
+	+full-wrap
+
+%title-section
+	+font(30px, #232020, 300, 130%)
+	letter-spacing: .6px
+	text-align: center
+	+max-width($mobail)
+			font-size: 26px
+
+%footer-label
+	+font(16px, #487631, 300, 160%)
+	letter-spacing: 0
+	+max-width($mobail)
+		font-size: 14px
+
+%flex-row
+	display: flex
+	flex-flow: row wrap
+	align-items: baseline
+
+.burger.state
+	display: none
+	+max-width($mobail)
+		display: block
+		margin-right: auto
+
+
+
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 100
+	transition: top .3s
+
+	&.header-hidden
+		top: -137px
+		transition: top .6s
+
+	.full-wrap
+		padding: 0
+
+.header-contact
+	display: flex
+	background: $white
+	justify-content: flex-end
+	padding: 66px 45px 26px
+	+max-width($mobail)
+		display: none
+	&.none
+		display: none
+
+
+	&__item
+		margin-left: 45px
+		flex: 0 0 auto
+
+		&:first-child
+			margin-left: 0
+
+	&__row
+		display: flex
+		align-items: center
+
+		img
+			max-width: 100%
+			height: 100%
+			margin-right: 7px
+
+
+	&__label
+		+font(14px, #797f7f, 300, 130%)
+
+	&__data
+		+font(13px, #2f343a, 400, 200%)
+
+		a
+			text-decoration: none
+			color: #2f343a
+			transition: all .3s
+
+			&:hover
+				color: $btn
+
+.header-menu
+	background: $bg
+	padding: 0 18px
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+.nav
+	margin-right: 18px
+	display: flex
+	justify-content: space-between
+	max-width: 810px
+	width: 100%
+	+max-width($mobail)
+		position: fixed
+		top: 0
+		left: -1000px
+		bottom: 0
+		right: 0
+		background: $bg
+		//height: 100vh
+		flex-flow: column
+		justify-content: center
+		align-items: center
+		transition: left 1.6s
+		//overflow-y: scroll
+		margin-right: auto
+
+	&.hidden
+		left: 0
+		transition: left .7s
+
+	&__item
+		+font(13px, $white, 600, 100%)
+		text-decoration: none
+		text-transform: uppercase
+		padding: 22px 0
+		position: relative
+		+max-width($tablet)
+			font-size: 12px
+		+max-width($mobail)
+			font-size: 18px
+			padding: 16px 0
+		+max-width-height($mobail)
+			font-size: 15px
+			padding: 8px 0
+			margin: 2px 0
+
+		&:after
+			position: absolute
+			content: ""
+			background: #f17398
+			bottom: 0
+			left: 0
+			right: 0
+			opacity: 0
+			height: 4px
+			width: 100%
+			transform: scaleX(0)
+			transition: transform .6s, opacity .6s .5s
+
+		&:hover:after
+			opacity: 1
+			transform: scaleX(1.2)
+			transition: transform .6s, opacity .6s 0s
+
+.header-networks
+	display: flex
+	align-items: center
+	margin-left: auto
+	margin-right: 8px
+	height: 56px
+
+	&__link
+		margin-left: 20px
+		flex: 1 0 auto
+		position: relative
+		z-index: 1
+
+		&:before
+			position: absolute
+			content: ""
+			background: $btn
+			width: 10px
+			height: 10px
+			top: 5px
+			left: 4px
+			border-radius: 50%
+			z-index: -1
+			opacity: 0
+			transition: all .3s ease-out
+
+		&:first-child:before
+			left: 0
+
+		&:hover:before
+			opacity: .9
+			box-shadow: 0 0 1px $btn
+			transform: scale(3.4)
+
+		img
+			max-width: 100%
+
+
+
+.home
+	&__bg
+		background: url("../img/bg_header.jpg") no-repeat 50% 0 /cover
+
+	&__content
+		padding-top: 360px
+		+max-width($mobail)
+			padding-top: 140px
+
+.block-opacity
+	margin-bottom: 165px
+	+max-width($mobail)
+		margin-bottom: 65px
+
+	&__box
+		background: $white
+		opacity: .8
+		padding: 20px 20px 30px
+		max-width: 460px
+
+
+	&__title
+		+font(22px, #2f343a, 600, 145%)
+		margin-bottom: 20px
+
+	&__text
+		+font(15px, #232020, 300, 160%)
+
+	&__btn
+		padding: 11px 20px
+
+.home-search
+	.input-btn
+		width: 315px
+		height: 55px
+		display: flex
+		+max-width($sm-mobail)
+			width: 280px
+			height: 48.5px
+
+		&:hover input,
+		&:hover button
+			box-shadow: 0 0 3px #121111
+
+		input[type="text"]
+			background: #232020
+			+font(17px, $white, 700, 130%)
+			width: 82.5%
+			border: none
+			text-align: left
+			padding-left: 30px
+			+max-width($sm-mobail)
+				font-size: 15px
+
+		button
+			width: 17.5%
+			border: none
+			cursor: pointer
+			background: #121111
+			display: flex
+			justify-content: center
+
+
+
+.search
+	&__content
+		padding: 40px 0 50px
+
+	&__caption
+		+font(25px, #2f343a, 300, 140%)
+		letter-spacing: .5px
+		text-align: center
+		margin-bottom: 50px
+
+	&__text
+		+font(18px, #2f343a, 300, 166%)
+		letter-spacing: .36px
+		text-align: center
+		max-width: 1000px
+		margin: 0 auto
+
+.search-form
+	display: flex
+	flex-flow: wrap
+	justify-content: space-between
+	align-items: center
+	margin: 0 auto 80px
+	+max-width($tablet)
+		max-width: 700px
+	+max-width($mobail)
+		max-width: 500px
+	+max-width($sm-mobail)
+		max-width: 260px
+
+	&__item
+		display: flex
+		flex-flow: column
+		margin-bottom: 20px
+		+max-width($mobail)
+			margin-bottom: 10px
+
+			&:nth-child(4)
+				margin-right: 18px
+
+	&__label
+		+font(13px, #2f343a, 600, 230%)
+		letter-spacing: .26px
+
+	.select
+		position: relative
+		display: inline-block
+
+	.select:after
+		content: ""
+		position: absolute
+		z-index: 1
+		text-align: center
+		pointer-events: none
+		box-sizing: border-box
+		right: 0
+		top: 0
+		bottom: 0
+		padding-top: 5px
+		width: 30px
+		background: #f1f2f2 url("../img/icon/select.png") no-repeat 50% 50%
+		border: 1px solid #b3b3b3
+
+	select
+		padding-right: 35px
+		border: 1px solid #b3b3b3
+		appearance: none
+		background: transparent
+		height: 30px
+		width: 225px
+		padding-left: 10px
+
+	.radio
+		width: 180px
+		height: 30px
+		display: flex
+
+		input[type="radio"]
+			display: none
+
+		label
+			border: 1px solid #b3b3b3
+			background: $white
+			width: 50%
+			height: 100%
+			+font(13px, #b3b3b3, 700, 230%)
+			letter-spacing: .26px
+			transition: all .2s
+			display: flex
+			align-items: center
+			justify-content: center
+
+			&:last-child
+				border-left: none
+
+		input[type="radio"]:checked + label
+			background: #2f343a
+			color: $white
+
+
+	.input-btn
+		width: 207px
+		height: 30px
+		display: flex
+		position: relative
+
+		&:after
+			position: absolute
+			content: "HEX"
+			top: 0
+			left: 10px
+			bottom: 0
+			+font(13px, rgba(179, 179, 179, 0.57), 400, 230%)
+			letter-spacing: .26px
+
+		input[type="text"]
+			+font(13px, #c8c8c8, 400, 230%)
+			letter-spacing: .26px
+			width: 147px
+			border: 1px solid #b3b3b3
+			padding-left: 63px
+
+		input[type="button"]
+			+font(11px, #2f343a, 600, 270%)
+			letter-spacing: .22px
+			width: 60px
+			border: 1px solid #b3b3b3
+			border-left: none
+			cursor: pointer
+
+	&__btn
+		line-height: .24px
+		border: none
+		padding: 11px 63px 9px
+		height: 34px
+		margin-top: 10px
+
+	select:hover,
+	.radio:hover,
+	.input-btn:hover
+		box-shadow: 0 0 3px gray
+
+
+
+.recently
+	&__content
+		padding: 50px 0
+
+	&__title
+		@extend %title-section
+		margin-bottom: 57px
+
+	&__box
+		display: flex
+		flex-flow: column
+		align-items: flex-end
+		margin: 0 auto
+		+max-width($tablet)
+			max-width: 810px
+		+max-width($mobail)
+			max-width: 680px
+		+max-width($sm-mobail)
+			max-width: 290px
+
+	&__wrapper
+		display: flex
+		align-items: stretch
+		margin-bottom: 6px
+
+	&__col:nth-child(n+2)
+		margin-left: 10px
+
+		&:nth-child(4)
+			+max-width($tablet)
+				display: none
+
+		&:nth-child(3)
+			+max-width($mobail)
+				display: none
+
+		&:nth-child(2)
+			+max-width($sm-mobail)
+				display: none
+
+	&__btn
+		padding: 11px 23px 12px
+		max-width: 120px
+		display: block
+
+.pic-card
+	position: relative
+
+	&:hover figcaption
+		opacity: .6
+
+	&:nth-child(2)
+		margin-top: 6px
+
+	&__img
+		max-width: 100%
+
+	&__text
+		position: absolute
+		right: 0
+		bottom: 0
+		left: 0
+		padding: 12px
+		background: #232020
+		opacity: 0
+		margin-bottom: 4px
+		transition: opacity .6s
+
+	&__desc
+		+font(15px, $white, 300, 130%)
+
+	&__author
+		+font(13px, $white, 400, 146%)
+		font-style: italic
+		letter-spacing: .26px
+
+
+
+.about
+	&__content
+		padding-top: 50px
+		text-align: center
+		+max-width($mobail)
+			padding-top: 50px
+
+	&__caption
+		@extend %title-section
+		margin-bottom: 59px
+		padding: 0 10px
+
+	&__bg
+		background: url("../img/bg_.jpg") center bottom/cover
+		box-shadow: 0 -7px 1px rgba(234, 234, 234, 0.75)
+		padding: 120px 10px 100px
+		+max-width($mobail)
+			padding: 60px 0 40px
+
+	&__title
+		+font(50px, $white, 800, 130%)
+		margin-bottom: 56px
+		+max-width($mobail)
+			font-size: 40px
+			margin-bottom: 36px
+
+	&__text
+		+font(18px, $white, 300, 195%)
+		margin-bottom: 60px
+		+max-width($mobail)
+			font-size: 16px
+
+	&__btn
+		padding: 11px 21px 12px
+
+
+
+
+.reviews
+	&__content
+		padding: 100px 0 56px
+		+max-width($mobail)
+			padding: 50px 0 25px
+
+	&__title
+		@extend %title-section
+		margin-bottom: 60px
+		+max-width($mobail)
+			margin-bottom: 40px
+
+.reviews-box
+	display: flex
+	flex-flow: row wrap
+	justify-content: center
+
+	&__item
+		display: flex
+		flex-flow: column
+		max-width: 480px
+		padding: 0 10px
+
+	&__row
+		display: flex
+		align-items: center
+		margin-bottom: 40px
+
+		img
+			max-width: 100%
+
+	&__icon
+		align-self: flex-start
+
+	&__text
+		margin: 10px 0 0 20px
+		+font(18px, #adafb0, 300, 165%)
+		+max-width($mobail)
+			font-size: 16px
+
+	&__sign
+		+font(15px, #2f343a, 700, 200%)
+		margin: 0 20px 0 auto
+		+max-width($mobail)
+			font-size: 13px
+			margin-right: 10px
+
+
+
+.sponsors
+	&__content
+		padding: 50px 0 41px
+
+	&__title
+		@extend %title-section
+		margin-bottom: 30px
+
+.sponsors-slider
+	&__wrap
+		position: relative
+		padding: 0 41px
+		+max-width($tablet)
+			padding: 0 61px
+
+	&__item img
+		max-width: 100%
+		margin: 0 auto
+
+	&__prev, &__next
+		background: url(../img/icon/back.png) no-repeat
+		width: 31px
+		height: 31px
+		position: absolute
+		left: -41px
+		top: calc(50% - 15.5px)
+
+		&:hover
+			box-shadow: 0 0 3px rgba(155, 154, 155, .8)
+
+		&.slick-disabled
+			opacity: .5
+
+	&__next
+		background: url(../img/icon/next.png) no-repeat
+		right: -41px
+		left: auto
+
+
+
+.team
+	&__content
+		padding: 50px  0 110px
+		+max-width($mobail)
+			padding: 50px 0 60px
+
+	&__title
+		@extend %title-section
+		margin-bottom: 65px
+
+.team-box
+	display: flex
+	flex-flow: row wrap
+	justify-content: center
+
+	&__item
+		margin: 0 15px 50px
+		text-align: left
+		max-width: 280px
+
+	&__img
+		max-width: 100%
+		min-width: 260px
+		margin-bottom: 22px
+
+	&__name
+		+font(30px, #232020, 600, 86%)
+		margin-bottom: 8px
+		+max-width($mobail)
+			font-size: 26px
+
+	&__job
+		+font(18px, #787a7d, 300, 140%)
+		font-style: italic
+		letter-spacing: .36px
+		margin-bottom: 20px
+		+max-width($mobail)
+			font-size: 16px
+			margin-bottom: 16px
+
+	&__text
+		+font(15px, #232020, 300, 160%)
+		letter-spacing: .3px
+		max-width: 300px
+		margin-bottom: 43px
+		+max-width($mobail)
+			font-size: 14px
+			margin-bottom: 20px
+
+.team-social__item
+	display: inline-block
+	margin-right: 10px
+	transition: opacity .1s
+
+	&:hover
+		opacity: .7
+
+	img
+		max-width: 100%
+		+max-width($mobail)
+			max-width: 95%
+
+
+
+.maps__yandex
+	height: 442px
+	width: 100%
+	box-shadow: 0 -7px 1px rgba(234, 234, 234, 0.75)
+
+
+
+.contact
+	.full-wrap
+		max-width: 1004px
+
+	&__content
+		padding: 80px 0 120px
+		+max-width($mobail)
+			padding: 50px 0 60px
+
+	&__title
+		@extend %title-section
+		margin-bottom: 65px
+		+max-width($sm-mobail)
+			margin-bottom: 45px
+
+	&__box
+		display: flex
+		+max-width($tablet)
+			flex-flow: wrap
+			justify-content: center
+
+%contact-form
+	border-width: 0
+	+font(18px, rgba(153, 153, 153, 0.7), 300, 155%)
+	background: #f8f8f8
+	padding: 6px 10px
+	+max-width($tablet)
+		font-size: 16px
+
+.contact-form
+	width: 62.4%
+	display: flex
+	flex-flow: column
+	+max-width($tablet)
+		width: auto
+		margin-bottom: 40px
+	+max-width($sm-mobail)
+		width: 90%
+
+	&__row
+		margin-bottom: 15px
+		display: flex
+		+max-width($mobail)
+			flex-flow: wrap
+			margin-bottom: 5px
+
+	input:not([type="submit"])
+		@extend %contact-form
+		width: 50%
+		+max-width($mobail)
+			width: 100%
+			margin-bottom: 10px
+
+		&:hover
+			box-shadow: 0 0 3px rgba(181, 181, 181, 0.84)
+
+		&:first-child
+			margin-right: 15px
+			+max-width($mobail)
+				margin-right: 0
+
+	textarea
+		@extend %contact-form
+		resize: none
+		max-width: 100%
+		max-height: 200px
+		margin-bottom: 15px
+
+		&:hover
+			box-shadow: 0 0 3px rgba(181, 181, 181, 0.84)
+
+	button
+		border-width: 0
+		font-size: 17px
+		padding: 8px 26px 11px
+		max-width: 189px
+		+max-width($mobail)
+			font-size: 16px
+
+.contact-adss
+	width: 38%
+	padding: 6px auto 40px
+	margin-left: 65px
+	display: flex
+	flex-flow: column
+	+max-width($tablet)
+		margin-left: 30px
+	+max-width($mobail)
+		width: auto
+		margin: 0 auto
+	+max-width($sm-mobail)
+		width: 90%
+
+	&__row
+		display: flex
+
+		&:nth-child(1)
+			margin-bottom: 30px
+
+		&:nth-child(5)
+			margin: 40px 0 26px
+
+	&__icon
+		margin-right: 18px
+		max-width: 100%
+		height: 100%
+
+	&__title
+		+font(25px, $title, 300, 112%)
+		+max-width($sm-mobail)
+			font-size: 20px
+
+	&__label
+		+font(17px, #0b0e11, 600, 165%)
+		width: 70px
+		margin-right: 20px
+		flex: 0 0 auto
+		+max-width($tablet)
+			margin-right: 10px
+		+max-width($sm-mobail)
+			font-size: 16px
+
+	&__adss,
+	&__tel,
+	&__mail
+		+font(17px, #999999, 300, 160%)
+		max-width: 290px
+		+max-width($sm-mobail)
+			font-size: 16px
+
+	&__tel,
+	&__mail
+		display: inline-block
+		text-decoration: none
+		transition: all .3s
+
+		&:hover
+			color: $btn
+
+	&__text
+		+font(18px, #999999, 300, 138%)
+		max-width: 290px
+		+max-width($sm-mobail)
+			font-size: 16px
+
+
+
+.footer
+	padding: 0 10px
+	background: $bg
+
+	&__content
+		padding: 134px 0 125px
+		+max-width($tablet)
+			padding: 80px 0 70px
+		+max-width($mobail)
+				padding: 50px 0 30px
+
+.footer-social
+	display: flex
+	justify-content: center
+
+	&__item
+		max-width: 100%
+		margin: 0 10px 32px 10px
+		transition: opacity .1s
+		+max-width($tablet)
+			margin-bottom: 18px
+
+		&:hover
+			opacity: .8
+
+.footer-copy
+	+font(15px, $white, 300, 230%)
+	letter-spacing: .6px
+	text-align: center
+	+max-width($mobail)
+		font-size: 13px

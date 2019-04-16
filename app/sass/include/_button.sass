@@ -1,0 +1,96 @@
+@charset "UTF-8"
+
+.btn
+	display: inline-block
+	position: relative
+	text-decoration: none
+	+font(12px, $white, 700, 130%)
+	background: $btn
+	z-index: 1
+	border-radius: 1px
+
+	&:after,
+	&:before
+		position: absolute
+		content: ""
+		right: 0
+		bottom: 0
+		left: 0
+		height: 4px
+		background: $btn_bottom
+		border-radius: 2px
+
+	&:before
+		z-index: -1
+		transition: height .4s
+
+	&:hover:before
+		height: 100%
+
+
+$burger-h: 3px
+$burger-w: 24px
+$burger-offset: 8px
+$burger-color: $white
+$burger-bg: $btn
+
+.burger
+	cursor: pointer
+	height: 40px
+	width: 40px
+	z-index: 10000
+	position: relative
+
+	&:before
+		position: absolute
+		content: ""
+		background: $burger-bg
+		width: 10px
+		height: 10px
+		top: 15px
+		left: 15px
+		border-radius: 50%
+		opacity: 0
+		transition: all .4s
+
+	&:hover:before
+		transform: scale(4)
+		opacity: .9
+		box-shadow: 0 0 2px $btn
+
+
+	&__icon
+		position: relative
+		background: $white
+		top: calc(50% - #{$burger-h}/2)
+		left: calc(50% - #{$burger-w}/2)
+		height: $burger-h
+		width: $burger-w
+		transition: height .1s .4s
+
+		&:before,
+		&:after
+			position: absolute
+			content: ""
+			background: $white
+			left: calc(50% - #{$burger-w}/2)
+			height: $burger-h
+			width: $burger-w
+			transition: transform .4s ease-in
+
+		&:before
+			transform: translateY(-$burger-offset)
+
+		&:after
+			transform: translateY($burger-offset)
+
+		&.burger-click
+			height: 0
+
+			&:before
+				transform: rotate(45deg)
+
+			&:after
+				transform: rotate(-45deg)
+
+

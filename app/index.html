@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="libs/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="libs/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="libs/jquery-2.2.4.min.js"></script>
+    <script src="libs/jquery-migrate-1.2.1.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript" src="dist/js/main.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="full-wrap">
+            <div class="header__box">
+                <div class="header-contact">
+                    <div class="header-contact__item">
+                        <div class="header-contact__row">
+                            <img src="/img/icon/icon_h1.png" alt="">
+                            <div class="header-contact__label">Visit our office</div>
+                        </div>
+                        <div class="header-contact__data">2945 Rinehart Road, Sunrise</div>
+                    </div>
+                    <div class="header-contact__item">
+                        <div class="header-contact__row">
+                            <img src="/img/icon/icon_htel.png" alt="">
+                            <div class="header-contact__label">Contact us via phone</div>
+                        </div>
+                        <div class="header-contact__data"><a href="tel:+4420794600413685">+44 20 7946 0041 3685</a></div>
+                    </div>
+                    <div class="header-contact__item">
+                        <div class="header-contact__row">
+                            <img src="/img/icon/icon_hmail.png" alt="">
+                            <div class="header-contact__label">Ask us questions</div>
+                        </div>
+                        <div class="header-contact__data"><a href="mailto:info@innosphere.com">info@innosphere.com</a></div>
+                    </div>
+                </div>
+                <div class="header-menu">
+                    <div class="burger state">
+                        <div class="burger__icon"></div>
+                    </div>
+                    <nav class="nav">
+                        <a href="#home" class="nav__item">Homepage</a>
+                        <a href="#search" class="nav__item">SEARCH</a>
+                        <a href="#images" class="nav__item">RECENT IMAGES</a>
+                        <a href="#about" class="nav__item">ABOUT</a>
+                        <a href="#testimonials" class="nav__item">TESTIMONIALS</a>
+                        <a href="#sponsors" class="nav__item">SPONSORS</a>
+                        <a href="#team" class="nav__item">TEAM</a>
+                        <a href="#contact" class="nav__item">Contact</a>
+                    </nav>
+                    <div class="header-networks">
+                        <a href="http://facebook.com" class="header-networks__link" target="_blank"><img src="/img/icon/facebook.svg" alt="facebook" title="facebook"></a>
+                        <a href="http://linkedin.com" class="header-networks__link" target="_blank"><img src="/img/icon/linkedin.png" alt="linkedin" title="linkedin"></a>
+                        <a href="http://behance.com" class="header-networks__link" target="_blank"><img src="/img/icon/behance.png" alt="behance" title="behance"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="home__bg">
+            <div class="full-wrap">
+                <div class="home__content">
+                    <div class="block-opacity">
+                        <div class="block-opacity__content">
+                            <div class="block-opacity__box">
+                                <div class="block-opacity__title">Your beautiful handcrafted stock photography marketplace.</div>
+                                <div class="block-opacity__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis tortor non ipsum condimentum molestie...</div>
+                            </div>
+                            <a href="" class="btn block-opacity__btn">KNOW MORE</a>
+                        </div>
+                    </div>
+                    <div class="home-search">
+                        <div class="input-btn" form="search-form">
+                            <button><img src="/img/icon/1.svg" alt="search"></button>
+                            <input type="text" name="color" id="" placeholder="SEARCH ALL GALLERIES">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="search" id="search">
+        <div class="full-wrap">
+            <div class="search__content">
+                <form class="search-form" method="POST" id="search-form">
+                    <div class="search-form__item">
+                        <label class="search-form__label" for="categories">Categories</label>
+                        <div class="select">
+                            <select name="categories" id="categories">
+                                <option value="c1">Architecture</option>
+                                <option value="c2">Fashion</option>
+                                <option value="c3">Landscapes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-form__item">
+                        <label class="search-form__label" for="license">License Type</label>
+                        <div class="select">
+                            <select name="license" id="license">
+                                <option value="l1">Creative</option>
+                                <option value="l2">Exclusive</option>
+                                <option value="l3">Editorial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-form__item">
+                        <label class="search-form__label" for="size">Image Size</label>
+                        <div class="select">
+                            <select name="size" id="size">
+                                <option value="s1">XXXL</option>
+                                <option value="s2">XXX</option>
+                                <option value="s3">XL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-form__item">
+                        <label class="search-form__label" for="color">Color</label>
+                        <div class="input-btn">
+                            <input type="text" name="color" id="color" placeholder="#F6546A">
+                            <input type="button" value="APPLY">
+                        </div>
+                    </div>
+                    <div class="search-form__item">
+                        <label class="search-form__label" for="browse">Browse</label>
+                        <div class="select">
+                            <select name="browse" id="browse">
+                                <option value="b1">Most Viewed</option>
+                                <option value="b2">Most Viewed</option>
+                                <option value="b3">Most Viewed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-form__item">
+                        <label class="search-form__label" for="location">Location</label>
+                        <div class="select">
+                            <select name="location" id="location">
+                                <option value="loc1">Worldwide</option>
+                                <option value="loc2">Worldwide</option>
+                                <option value="loc3">Worldwide</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-form__item">
+                        <label class="search-form__label">Adult Content</label>
+                        <div class="radio">
+                            <input type="radio" id="yes" name="content" checked>
+                            <label for="yes">YES</label>
+                            <input type="radio" id="no" name="content">
+                            <label for="no">NO</label>
+                        </div>
+                    </div>
+                    <button type="submit" name="submit" class="btn search-form__btn">START YOUR SEARCH</button>
+                </form>
+                <div class="search__caption">Over 40 Million Stock Photos, Vectors, Videos, and Music Tracks</div>
+                <div class="search__text">Search for images anywhere using our award-winning iPad®, iPhone®, and Android® apps. Functional enough to use alone, beautiful enough to show off to clients.</div>
+            </div>
+        </div>
+    </section>
+    <section class="recently" id="images">
+        <div class="full-wrap">
+            <div class="recently__content">
+                <div class="recently__title">Recently uploaded</div>
+                <div class="recently__box">
+                    <div class="recently__wrapper">
+                        <div class="recently__col">
+                            <figure class="pic-card">
+                                <img src="/img/uploads/1.jpg" alt="girl" class="pic-card__img">
+                                <figcaption class="pic-card__text">
+                                    <div class="pic-card__desc">OLD MAN FROM INDIA</div>
+                                    <div class="pic-card__author">by Frank Tucker</div>
+                                </figcaption>
+                            </figure>
+                            <figure class="pic-card">
+                                <img src="/img/uploads/2.jpg" alt="girl" class="pic-card__img">
+                                <figcaption class="pic-card__text">
+                                    <div class="pic-card__desc">OLD MAN FROM INDIA</div>
+                                    <div class="pic-card__author">by Frank Tucker</div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="recently__col">
+                            <figure class="pic-card">
+                                <img src="/img/uploads/3.jpg" alt="girl" class="pic-card__img">
+                                <figcaption class="pic-card__text">
+                                    <div class="pic-card__desc">OLD MAN FROM INDIA</div>
+                                    <div class="pic-card__author">by Frank Tucker</div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="recently__col">
+                            <figure class="pic-card">
+                                <img src="/img/uploads/4.jpg" alt="girl" class="pic-card__img">
+                                <figcaption class="pic-card__text">
+                                    <div class="pic-card__desc">OLD MAN FROM INDIA</div>
+                                    <div class="pic-card__author">by Frank Tucker</div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="recently__col">
+                            <figure class="pic-card">
+                                <img src="/img/uploads/5.jpg" alt="girl" class="pic-card__img">
+                                <figcaption class="pic-card__text">
+                                    <div class="pic-card__desc">OLD MAN FROM INDIA</div>
+                                    <div class="pic-card__author">by Frank Tucker</div>
+                                </figcaption>
+                            </figure>
+                            <figure class="pic-card">
+                                <img src="/img/uploads/6.jpg" alt="girl" class="pic-card__img">
+                                <figcaption class="pic-card__text">
+                                    <div class="pic-card__desc">OLD MAN FROM INDIA</div>
+                                    <div class="pic-card__author">by Frank Tucker</div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <a href="" class="btn recently__btn">LOAD MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="about__content">
+            <div class="about__caption">About Stock photography</div>
+            <div class="about__bg">
+                <div class="full-wrap">
+                    <div class="about__title">What is Stock Photography?</div>
+                    <div class="about__text">Supply of photographs, which are often licensed for specific uses. It is used to fulfill the needs of creative assignments instead of hiring a photographer, often for a lower cost. Today, stock images can be presented in searchable online databases. They can be purchased and delivered online. </div>
+                    <a href="#" class="btn about__btn">KNOW MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reviews" id="testimonials">
+        <div class="full-wrap">
+            <div class="reviews__content">
+                <div class="reviews__title">Hear what our customers are saying</div>
+                <div class="reviews-box">
+                    <div class="reviews-box__item">
+                        <div class="reviews-box__row">
+                            <img src="/img/icon/pink.png" alt="icon" class="reviews-box__icon">
+                            <div class="reviews-box__text">&laquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis. &raquo;</div>
+                        </div>
+                        <div class="reviews-box__row">
+                            <div class="reviews-box__sign">Jennifer R. Rhoades, CEO, Bubblesphere</div>
+                            <img src="/img/worker/jenn.png" alt="Jennifer R." title="Jennifer R." class="reviews-box__foto">
+                        </div>
+                    </div>
+                    <div class="reviews-box__item">
+                        <div class="reviews-box__row">
+                            <img src="/img/icon/blue.png" alt="icon"  class="reviews-box__icon">
+                            <div class="reviews-box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula consequat velit eget iaculis. </div>
+                        </div>
+                        <div class="reviews-box__row">
+                            <div class="reviews-box__sign">Matthew J. Sears, Founder of Feedclub</div>
+                            <img src="/img/worker/matt.png" alt="Matthew J." title="Matthew J.">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="sponsors" id="sponsors">
+    <div class="full-wrap">
+        <div class="sponsors__content">
+            <div class="sponsors__title">Our sponsors</div>
+            <div class="sponsors-slider__wrap">
+                <div class="sponsors-slider">
+                    <div class="sponsors-slider__item"><img src="/img/slider/sponsor_woo.jpg" alt="WOO"></div>
+                    <div class="sponsors-slider__item"><img src="/img/slider/sponsor_env.jpg" alt="envanto"></div>
+                    <div class="sponsors-slider__item"><img src="/img/slider/sponsor_w.jpg" alt="W"></div>
+                    <div class="sponsors-slider__item"><img src="/img/slider/sponsor_drib.jpg" alt="dribbble"></div>
+                    <div class="sponsors-slider__item"><img src="/img/slider/sponsor_jq.jpg" alt="jquery"></div>
+                    <div class="sponsors-slider__item"><img src="/img/slider/sponsor_woo.jpg" alt="WOO"></div>
+                    <div class="sponsors-slider__item"><img src="/img/slider/sponsor_env.jpg" alt="envanto"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="team" id="team">
+        <div class="full-wrap">
+            <div class="team__content">
+                <div class="team__title">Meet our team</div>
+                <div class="team-box">
+                    <div class="team-box__item">
+                        <img class="team-box__img" src="/img/worker/worker1.jpg" alt="Patricia Wright" title="Patricia Wright">
+                        <div class="team-box__name">Patricia Wright</div>
+                        <div class="team-box__job">Lead Developer</div>
+                        <div class="team-box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
+                        <div class="team-social">
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/twitter.png" alt="twitter.com" title="twitter.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/facebook.png" alt="facebook.com" title="facebook.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/dribbble.png" alt="dribbble.com" title="dribbble.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/pinterest.png" alt="pinterest.com" title="pinterest.com"></a>
+                        </div>
+                    </div>
+                    <div class="team-box__item">
+                        <img class="team-box__img" src="/img/worker/worker2.jpg" alt="James C. Cotter" title="James C. Cotter">
+                        <div class="team-box__name">James C. Cotter</div>
+                        <div class="team-box__job">CEO</div>
+                        <div class="team-box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
+                        <div class="team-social">
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/twitter.png" alt="twitter.com" title="twitter.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/facebook.png" alt="facebook.com" title="facebook.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/dribbble.png" alt="dribbble.com" title="dribbble.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/pinterest.png" alt="pinterest.com" title="pinterest.com"></a>
+                        </div>
+                    </div>
+                    <div class="team-box__item">
+                        <img class="team-box__img" src="/img/worker/worker3.jpg" alt="Sarah Cole" title="Sarah Cole">
+                        <div class="team-box__name">Sarah Cole</div>
+                        <div class="team-box__job">Web Designer</div>
+                        <div class="team-box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et feugiat mi. Sed lacinia euismod convallis.</div>
+                        <div class="team-social">
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/twitter.png" alt="twitter.com" title="twitter.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/facebook.png" alt="facebook.com" title="facebook.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/dribbble.png" alt="dribbble.com" title="dribbble.com"></a>
+                            <a class="team-social__item" href="#" target="_blank"><img src="/img/icon/pinterest.png" alt="pinterest.com" title="pinterest.com"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="map">
+        <div id="map" class="maps__yandex" data-yandexx="55.585087" data-yandexy="37.339508"></div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="full-wrap">
+            <div class="contact__content">
+                <div class="contact__title">Get in touch with us</div>
+                <div class="contact__box">
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="contact-form__row">
+                            <input type="text" maxlength="10" name="first" placeholder="First name" tabindex="1" autofocus>
+                            <input type="text" maxlength="10" name="last" placeholder="Last name" tabindex="2">
+                        </div>
+                        <div class="contact-form__row">
+                            <input type="email" name="email" placeholder="Email">
+                            <input type="tel" placeholder="Phone number">
+                        </div>
+                        <textarea name="message" id="message" cols="30" rows="8" placeholder="Message"></textarea>
+                        <button type="submit" name="submit" class="btn">SEND MESSAGE</button>
+                    </form>
+                    <div class="contact-adss">
+                        <div class="contact-adss__row">
+                            <img class="contact-adss__icon" src="/img/icon/address.png" alt="">
+                            <div class="contact-adss__title">Our address</div>
+                        </div>
+                        <div class="contact-adss__row">
+                            <div class="contact-adss__label">Address:</div>
+                            <div class="contact-adss__adss">3497 Gateway Road Portland, OR 97217</div>
+                        </div>
+                        <div class="contact-adss__row">
+                            <div class="contact-adss__label">Phone:</div>
+                            <a  class="contact-adss__tel" href="tel:2295032899830">(229) 503-289-9830</a>
+                        </div>
+                        <div class="contact-adss__row">
+                            <div class="contact-adss__label">Email:</div>
+                            <a class="contact-adss__mail" href="https://www.mobilecom.com" target="_blank">www.mobilecom.com</a>
+                        </div>
+                        <div class="contact-adss__row">
+                            <img class="contact-adss__icon" src="/img/icon/icon-about-us.png" alt="">
+                            <div class="contact-adss__title">About us</div>
+                        </div>
+                        <div class="contact-adss__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida dapibus sapien.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer-social">
+                <a class="footer-social__item" target="_blank" href="https://www.facebook.com"><img src="/img/icon/icon_f.png" alt="facebook.com" title="facebook.com"></a>
+                <a class="footer-social__item" target="_blank" href="https://twitter.com"><img src="/img/icon/icon_t.png" alt="twitter.com" title="twitter.com"></a>
+                <a class="footer-social__item" target="_blank" href="https://in.com"><img src="/img/icon/icon_in.png" alt="in.com" title="in.com"></a>
+                <a class="footer-social__item" target="_blank" href="https://v.com"><img src="/img/icon/icon_v.png" alt="v.com" title="v.com"></a>
+            </div>
+            <div class="footer-copy">&copy;&nbsp;2015 Innosphere&nbsp;- All rights reserved&nbsp;- made by&nbsp;Vid Kraljić Radulović</div>
+        </div>
+    </footer>
+</body>
+</html>
